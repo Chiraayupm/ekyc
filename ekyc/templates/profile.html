@@ -1,4 +1,52 @@
 {% extends 'base.html' %}
-{% load static %}
+{% load static  %}
 
-{% block content %}Hello{% endblock content %}
+{% block content %}
+
+<div class="container">
+        <div class="title">
+            Your details
+        </div>
+
+        <div class="user-details">
+            <div class="input-box">
+                <span class="details">
+                    Name
+                </span>
+                
+                <h3>MyName</h3>
+            </div>
+
+            <div class="input-box">
+                <span class="details">
+                    Email
+                </span>
+                <h3>MyEmail</h3>
+            </div>
+
+            <div class="input-box">
+                <span class="details">
+                    Aadhar Card no.
+                </span>
+                <h3>4874678347</h3>
+            </div>
+
+            <div class="input-box">
+                <span class="details">
+                    Pan card no.
+                </span>
+                <h3>37848949329</h3>
+            </div>
+
+            <div class="input-box">
+                <span class="details">
+                    KYC status
+                </span>
+                <h3>Some bool val</h3>
+            </div>
+        </div>
+
+            
+    </div>
+
+{% endblock content %}

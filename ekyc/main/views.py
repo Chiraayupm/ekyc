@@ -7,7 +7,7 @@ def index(request):
     return render(request, 'index.html')
 
 def verify(request):
-    return render(request, 'verify.html')
+    return render(request, 'phone.html')
 
 def register(request):
     if request.method == 'POST':

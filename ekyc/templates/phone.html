@@ -1,19 +1,41 @@
 {% extends 'base.html' %}
-{% load static %}
+{% load static 'css/profile.css' %}
 
 {% block content %}
 <form role="form" method="POST" action="">
-    <div class="row setup-content" id="step-1">
-        <!-- <div class="col-xs-12"> -->
-            <div class="col-md-12">
-                <h3> Step 1</h3>
-                <div class="form-group">
-                    <label class="control-label">Enter Phone number, an OTP will be sent to this number</label>
-                    <input name="phone"  maxlength="10" class="form-control" placeholder="10 digit phone num" type="tel" required aria-required="true" minlength="1"/>
+    <div class="container">
+    <div class="phone-form">
+        <div class="row" id="step-1">
+            <!-- <div class="col-xs-12"> -->
+                <div class="col-md-12">
+                    
+                    
+                    <div class="input-box">
+                    <span class="details">
+                        Phone num
+                    </span>
+                    <input type="number" placeholder="">
+                    </div>
+
+                    
+                    <h3> Step 1</h3>
+                    <div class="form-group">
+                        <label class="control-label">Enter Phone number, an OTP will be sent to this number</label>
+                        <input name="phone"  maxlength="10" class="form-control" placeholder="10 digit phone num" type="tel" required aria-required="true" minlength="1"/>
+                    </div>
+
+                    <div class="row">
+						<div class="col-md-4 form-field mt-4 mb-0">
+						<label for="mobile"><h6>Phone no : </h6>
+						<input type="text" id="phonenum" class="input-text" name="mobile" placeholder="Mobile No">
+						</label>
+						</div>
+                    </div>
+                    <button class="btn btn-primary nextBtn btn-lg pull-right" type="submit">Next</button>
                 </div>
-                <button class="btn btn-primary nextBtn btn-lg pull-right" type="submit">Next</button>
-            </div>
-        <!-- </div> -->
+            <!-- </div> -->
+        </div>
+    </div>
     </div>
 </form>
 
