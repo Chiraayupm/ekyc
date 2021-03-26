@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import models as userModel
-# Create your views here.
+from .models import *
 
 def index(request):
     return render(request, 'index.html')
@@ -57,3 +57,28 @@ def login(request):
         return render(request, "login.html")
     return render(request, "login.html")
 
+def verify_ids(request):
+    if request.method == 'POST':
+        aadhar_no = request.POST['aadhar_no']
+        pan_no = request.POST['pan_no']
+
+        profile = Profile.objects.get(user=request.user.id)
+
+        if profile.aadhar_no == aadhar_no:
+            if profile.pan_no == pan_no:
+                messages.info(request, 'Valid details.')
+            else:
+                messages.info(request, 'Invalid pancard number.')
+        else:
+            messages.info(request, 'Invalid aadhar number.')
+
+    else:
+        return render(request, 'verify.html')
+
+def verify_phone(request):
+    if request.method == 'POST':
+        phone = request.POST['phone']
+        print(phone)
+        return redirect('/')
+    else:
+        return render(request, 'verify.html')
