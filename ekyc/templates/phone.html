@@ -3,6 +3,7 @@
 
 {% block content %}
 <form role="form" method="POST" action="">
+    {% csrf_token %}
     <div class="row setup-content" id="step-1">
         <!-- <div class="col-xs-12"> -->
             <div class="col-md-12">
