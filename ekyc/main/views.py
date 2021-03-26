@@ -5,3 +5,6 @@ from django.contrib import messages
 
 def index(request):
     return render(request, 'index.html')
+
+def verify(request):
+    return render(request, 'verify.html')
