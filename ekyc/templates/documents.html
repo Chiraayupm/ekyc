@@ -1,0 +1,49 @@
+<!-- Photo UPLOAD -->
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<form method="POST" enctype="multipart/form-data" role="form">
+
+    {% csrf_token %}
+    <div class="row setup-content" id="step-3">
+        <!-- <div class="col-xs-12"> -->
+            <div class="col-md-12 justify-content-center align-items-center">
+                <h3> Step 3</h3>
+
+                <div class="drop-zone">
+                <span class="drop-zone__prompt">Drop photo here or click to upload</span>
+                <input type="file" name="picture" class="drop-zone__input" accept="image/*" required>
+                </div>
+            </div>
+        <!-- </div> -->
+    </div>
+
+    <div class="row setup-content" id="step-4">
+        <!-- <div class="col-xs-12"> -->
+            <div class="col-md-12 justify-content-center align-items-center">
+                <h3> Upload image of Aadhar card/PAN card/Driving-license/Voter-id</h3>
+                <div class="drop-zone">
+                    <span class="drop-zone__prompt">Drop documents here or click to upload</span>
+                    <input type="file" name="idproof" class="drop-zone__input" accept="image/*" required>
+                </div>
+            </div>
+        <!-- </div> -->
+    </div>
+
+    <div class="row setup-content" id="step-5">
+        <!-- <div class="col-xs-12"> -->
+            <div class="col-md-12 justify-content-center align-items-center">
+                <h3> Upload electricity bill of last month</h3>
+                <div class="drop-zone">
+                    <span class="drop-zone__prompt">Drop documents here or click to upload</span>
+                    <input type="file" name="addrproof" class="drop-zone__input" accept="image/*" required>
+                </div>
+            </div>
+        <!-- </div> -->
+    </div>
+
+    <button type="submit">Finish</button>
+</form>
+{% endblock content %}

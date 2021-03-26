@@ -82,3 +82,15 @@ def verify_phone(request):
         return redirect('/')
     else:
         return render(request, 'verify.html')
+
+def verify_docs(request):
+    if request.method == 'POST':
+        print(request)
+        print(request.FILES)
+        return render(request, 'profile.html')
+    else:
+        return render(request, 'documents.html')
+
+
+def profile(request):
+    return render(request, 'profile.html')
