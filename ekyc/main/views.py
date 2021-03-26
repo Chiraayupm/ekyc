@@ -13,10 +13,11 @@ def register(request):
     if request.method == 'POST':
         fname = request.POST['fname']
         lname = request.POST['lname']
-        username = request.POST['username']
         email = request.POST['email']
         password1 = request.POST['password1']
         password2 = request.POST['password2']
+
+        username = fname + " " + lname
 
         if password1 == password2:
             if userModel.User.objects.filter(username=username).exists():
@@ -71,6 +72,7 @@ def verify_ids(request):
         if profile.aadhar_no == aadhar_no:
             if profile.pan_no == pan_no:
                 messages.info(request, 'Valid details.')
+                redirect('verifyphone')
             else:
                 messages.info(request, 'Invalid pancard number.')
         else:
@@ -103,9 +105,23 @@ def verify_phone(request):
             )
 
         print(message.sid)
-        return redirect('/')
+        return redirect('verifyotp')
     else:
         return render(request, 'phone.html')
+
+def verify_otp(request):
+    if request.method == 'POST':
+        digits = request.POST['otp']
+        otp = OTP.objects.latest('pk')
+        print(otp)
+        if int(digits) == otp.otp_code:
+            print("otp maches")
+            otp.delete()
+            return redirect('/') #redirect to verify video later
+        else:
+            print("otp didnt match")
+    else:
+        return render(request, 'otp.html')
 
 def verify_docs(request):
     if request.method == 'POST':
