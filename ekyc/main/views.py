@@ -82,3 +82,19 @@ def verify_phone(request):
         return redirect('/')
     else:
         return render(request, 'verify.html')
+
+def verify_docs(request):
+    if request.method == 'POST':
+        picture = ImageUpload(file=request.FILES.get('picture'), user=request.user)
+        idproof = IdUpload(file=request.FILES.get('idproof'), user=request.user)
+        addrproof = AddressUpload(file=request.FILES.get('addrproof'), user=request.user)
+        picture.save()
+        idproof.save()
+        addrproof.save()
+        return render(request, 'profile.html')
+    else:
+        return render(request, 'documents.html')
+
+
+def profile(request):
+    return render(request, 'profile.html')

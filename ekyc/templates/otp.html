@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<form method="POST" role="form">
+    <div class="row setup-content" id="step-2">
+        <!-- <div class="col-xs-12"> -->
+            <div class="col-md-12">
+                <h3> Step 2</h3>
+                <div class="form-group">
+                    <label class="control-label">Enter OTP</label>
+                    <input maxlength="4" minlength="4" type="tel" class="form-control" placeholder="XXXX" name="otp" required/>
+                </div>
+                <button class="btn btn-primary nextBtn btn-lg pull-right" type="submit" >Next</button>
+            </div>
+        <!-- </div> -->
+    </div>
+</form>
+{% endblock content %}
