@@ -7,7 +7,7 @@ def index(request):
     return render(request, 'index.html')
 
 def verify(request):
-    return render(request, 'verify.html')
+    return render(request, 'phone.html')
 
 def register(request):
     if request.method == 'POST':
@@ -56,6 +56,10 @@ def login(request):
     else:
         return render(request, "login.html")
     return render(request, "login.html")
+    
+def logout(request):
+    userModel.auth.logout(request)
+    return redirect('/')
 
 def verify_ids(request):
     if request.method == 'POST':
