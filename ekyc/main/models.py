@@ -20,6 +20,13 @@ class ImageUpload(models.Model):
     def __str__(self):
         return self.user.fname + self.user.lname + " Image doc."
 
+class VideoUpload(models.Model):
+    file = models.FileField(upload_to = 'videos/')
+    user = models.ForeignKey(mod.User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.user.fname + self.user.lname + " Video doc."
+
 class IdUpload(models.Model):
     file = models.FileField(upload_to = 'ids/')
     user = models.ForeignKey(mod.User, on_delete=models.CASCADE)
