@@ -18,21 +18,21 @@ class ImageUpload(models.Model):
     user = models.ForeignKey(mod.User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.user.fname + self.user.lname + " Image doc."
+        return self.user.username + " Image doc."
 
 class VideoUpload(models.Model):
     file = models.FileField(upload_to = 'videos/')
     user = models.ForeignKey(mod.User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.user.fname + self.user.lname + " Video doc."
+        return self.user.username + " Video doc."
 
 class IdUpload(models.Model):
     file = models.FileField(upload_to = 'ids/')
     user = models.ForeignKey(mod.User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.user.fname + self.user.lname + " ID doc."
+        return self.user.username + " ID doc."
 
 
 class AddressUpload(models.Model):
@@ -40,11 +40,11 @@ class AddressUpload(models.Model):
     user = models.ForeignKey(mod.User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.user.fname + self.user.lname + " Address doc."
+        return self.user.username + " Address doc."
 
 class OTP(models.Model):
     otp_code = models.IntegerField() 
     user = models.ForeignKey(mod.User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.otp_code
+        return str(self.otp_code)
