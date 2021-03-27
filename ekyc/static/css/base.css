@@ -92,6 +92,7 @@ body{
     color: #cccccc;
     border: 2px dashed #0060ff;
     border-radius: 10px;
+    background-color: #f7f7f7;
 }
 
 /* change border after file has been uploaded */
