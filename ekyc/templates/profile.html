@@ -8,6 +8,9 @@
 {% endblock pgcss %}
 {% block content %}
 
+<div class="alert alert-warning alert-dismissible fade" role="alert">
+    <p>Your kyc is verified</p>
+</div>
 <div class="container">
         <div class="title">
             Your details
@@ -51,6 +54,7 @@
                     <h3>Your KYC is verified.</h3>
                 {% else %}
                     <h3>Your KYC is not verified.</h3>
+                    <a href="profile" class="button">Click here to get verified </a>
                 {% endif %}
             </div>
         </div>

@@ -180,7 +180,7 @@ def verification():
 
 
             cv2.resize(img,(width,heigh))
-            cv2.imwrite('C:/Users/Parth/Desktop/codecell/codecell/ekyc/main/vid_ss/camera' + str(i) + '.jpeg', img)
+            cv2.imwrite('C:/Users/varun/codecell/ekyc/main/vid_ss/camera' + str(i) + '.jpeg', img)
             i += 1
 
 
@@ -195,7 +195,7 @@ def verification():
     imgtest = face_recognition.load_image_file(latest_file_document)
 
     imgtest = cv2.cvtColor(imgtest , cv2.COLOR_BGR2RGB)
-    imgtest = cv2.resize(imgtest , (width,heigh))
+    imgtest = cv2.resize(imgtest , (512,512))
     face_loc_test = face_recognition.face_locations(imgtest)
     encodingtest = face_recognition.face_encodings(imgtest)
     if not len(face_loc_test):
@@ -215,13 +215,13 @@ def verification():
 
 
     if flag == 0:
-            path = 'C:/Users/Parth/Desktop/codecell/codecell/ekyc/main/vid_ss'
+            path = 'C:/Users/varun/codecell/ekyc/main/vid_ss'
 
             n = (len(os.listdir(path)))
             values = []
             values1 = []
             for i in range(n):
-                img = face_recognition.load_image_file('C:/Users/Parth/Desktop/codecell/codecell/ekyc/main/vid_ss/camera'+str(i)+'.jpeg')
+                img = face_recognition.load_image_file('C:/Users/varun/codecell/ekyc/main/vid_ss/camera'+str(i)+'.jpeg')
                 img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
                 face_loc = face_recognition.face_locations(img)
                 if not len(face_loc):
@@ -239,12 +239,17 @@ def verification():
             print(values1)
 
             c=0
+            ctc=0
+            cfc=0
             if len(values)>3:
                 for v in values:
                     a = v[0]
 
                     if a == True:
+                        ctc+=1
                         c+=1
+                    else:
+                        cfc+=1
 
                 if c//len(values)>0.60:
 
@@ -252,9 +257,12 @@ def verification():
                     print(c//len(values)*100)
                     
 
+                if ctc>cfc:
+                    flag =0
+                    print("verified truely")
                 else:
-                    flag =1
-                    print("Please Recheck Your Image Doc Or Please Reatke another video in proper Lighting")
+                    flag=1
+                    print("false verification")
 
 
 
@@ -263,20 +271,28 @@ def verification():
                 print("Couldnt recognise face , please try again")
 
             d=0
+            dtd=0
+            dfd=0
             if len(values1)>3:
                 for v in values1:
                     a = v[0]
 
                     if a == True:
+                        dtd+=1
                         d+=1
+                    else:
+                        dfd+=1
 
                 if d//len(values1)>0.60:
                     print("Verified")
                     #print(c//len(values)*100)
 
+                if dtd>dfd:
+                    flag =0
+                    print("verified truely")
                 else:
-                    flag =1
-                    print("Please Recheck Your Doc Or Please Reatke another video in proper Lighting")
+                    flag=1
+                    print("false verification")
 
 
 
@@ -306,12 +322,16 @@ def video(request):
         flag = verification()
         if flag == 0:
             print("Verified")
-
+            prof = Profile.objects.get(user_id=request.user.id)
+            prof.is_kyc_verified = True
+            prof.save()
+            return redirect('verifyprofile')
         else:
             print("Recheck")
+            mssg = "Please recheck your uploaded documents and ensure that there is proper lighting for the video. There was some problem in processing your request."
+            return render(request, 'documents.html', {"message":mssg})
         # vid_final = VideoUpload(file=base64.b64decode(text), user=request.user)
         # vid_final.save()
-        return redirect('/')
     else:
         return render(request, 'video.html')
 

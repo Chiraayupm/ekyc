@@ -2,11 +2,12 @@ body{
     font-family: 'Poppins', sans-serif;
     font-family: 'Roboto', sans-serif;
     background-color: #f7f7f7;
+    
     /* background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)); */
 }
 
 #bgimg{
-	position:absolute;
+	position:fixed;
 	display: block;
 	opacity: 0.1;
 	border:none;
@@ -18,17 +19,18 @@ body{
 	justify-content: center;
 	padding:0;
 	margin:0;
+    z-index:-1;
 }
 @media (max-width: 640px){
 	#bgimg{
 		display: none;
 	}
 }
-/* nav{
+.navbar{
     border: none;
-    background-color: #f7f7f7;
+    background-color: rgb(39, 39, 39);
    
-} */
+}
 #link{
     position: relative;
     padding: 15px 20px;

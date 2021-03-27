@@ -10,10 +10,9 @@
 	/* z-index: 1; */
 
 }
-#kyc #kyc1{
-	width: 90%;
+#kyc {
+	width: 50vh;
 	position: relative;
-	margin-left: 3%;
 	justify-content: center;
 }
 #contBox {
@@ -24,36 +23,44 @@
 	margin-top: 40px;
 	/* z-index: 1; */
 }
-h1 {
-	text-align: center;
-	color: #4a4e4d;
-	vertical-align: middle !important;
+#mainHeading {
+	
+	color: #39393a;
+	vertical-align: middle;
 }
-p{
-	color: #4a4e4d;
-	text-decoration: uppercase;
+#para{
+	color: #393a3a;
 	margin-top: 15px;
-	font-size: large;
+	font-size: 20px;
 }
 #buttonBox {
 	display: flex;
+	margin-top: 50px;
+	/* padding: 25px 50px; */
 	justify-content: center;
+	
 }
 #procKyc{
 	justify-content: center;
 	border: 1px solid #ccc;
-	border-radius: 20px;
+	border-radius: 35px;
 	box-shadow: 5px 5px 10px #ccc;
+	width: 100%;
+	padding:20px;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: 400;
 
 } 
  
 #procKyc:hover{
 	background-color: #444 !important;
 	color:white !important;
+	text-decoration: none !important;
 
 }
 #contBox1{
-	display: flex;
+	display: inline;
 	position: relative;
 	justify-content: center;
 	padding: 20px;
@@ -61,4 +68,74 @@ p{
 	/* z-index: 1; */
 }
 
+#svgText {
+	display:flex;
+	
+}
+#svg{
+	margin-left:0;
+	margin-right: 30px;
+	margin-top: 33px;
+}
+#text{
+	margin-top: 25px;
+	margin-right: 20px;
+	font-size: 20px;
+}
+#pts{
+	color:#0060ff;
+	font-size:32px;
+	font-weight: bold;
+}
+#heading{
+	display: block;
+	margin-top: 80px;
+	margin-bottom: 25px;
+}
+#why{
+	text-transform: uppercase;
+	font-size: 38px;
+	color:#ff5e00;
+	font-weight: bold;
+}
+#kycHeading{
+	margin-left: 28px;
+	letter-spacing: 0.15px;
+}
 
+#kyc1 {
+	top:0;
+	width:1vh;
+	background-color: #f7f7f7;
+	float:right;
+	margin-top: -35vh;
+	display:inline;
+	position: relative;
+	justify-content: center;
+}
+
+i{
+	margin-top: 20px;
+	line-height: 1px;
+	margin-left: 15px;
+	margin-right: 35px;
+	margin-bottom: 30px;
+}
+#immiBox{
+	display: inline;
+	justify-content: center;
+}
+#immi{
+	position: relative;
+	float: right;
+	width: 60vh;
+	display: inline;
+	margin-top: auto;
+	margin-top: -65vh;
+	margin-right: -280px;
+}
+@media (max-width:640px){
+	#immi{
+		display:none;
+	}
+}
