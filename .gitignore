@@ -96,7 +96,7 @@ profile_default/
 ipython_config.py
 
 # pyenv
-pyenv.cfg
+pyvenv.cfg
 .python-version
 
 # pipenv
