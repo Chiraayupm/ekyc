@@ -150,7 +150,7 @@ def video(request):
         vid = request.FILES.get('video')
         text = base64.b64encode(vid.read())
         # print(text)
-        fh = open("media/videos/video_"+request.user.username+".mp4", "wb")
+        fh = open("media/videos/video.mp4", "wb")
         fh.write(base64.b64decode(text))
         fh.close()
         # vid_final = VideoUpload(file=base64.b64decode(text), user=request.user)
