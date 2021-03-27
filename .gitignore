@@ -90,12 +90,13 @@ target/
 
 # Jupyter Notebook
 .ipynb_checkpoints
-
+vid_ss
 # IPython
 profile_default/
 ipython_config.py
 
 # pyenv
+pyvenv.cfg
 .python-version
 
 # pipenv

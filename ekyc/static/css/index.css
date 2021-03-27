@@ -45,10 +45,12 @@ p{
 	border-radius: 20px;
 	box-shadow: 5px 5px 10px #ccc;
 
-}
+} 
+ 
 #procKyc:hover{
 	background-color: #444 !important;
 	color:white !important;
 
 }
+
 

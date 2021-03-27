@@ -1,3 +1,7 @@
 p .step_{
     color: #040404 !important;
 }
+
+#preview{
+    overflow:unset
+}
