@@ -6,9 +6,6 @@ from .models import *
 def index(request):
     return render(request, 'index.html')
 
-def verify(request):
-    return render(request, 'phone.html')
-
 def register(request):
     if request.method == 'POST':
         fname = request.POST['fname']
