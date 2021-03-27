@@ -119,6 +119,7 @@
     stream.getTracks().forEach((track) => track.stop());
   }
 
+  
   startButton.addEventListener(
     "click",
     function () {
@@ -143,11 +144,11 @@
           record_text.style.display="block";
           downloadButton.style.display="block"
           prompt_text.style.display="none";
-          startButton.style.display="none";
+         
           downloadButton.href = recording.src;
           downloadButton.download = "RecordedVideo.mp4";
           preview.style.display="none";
-          recording.style.display="block"
+          recording.style.display="block";
           log(
             "Successfully recorded " +
               recordedBlob.size +
@@ -161,6 +162,13 @@
     false
   );
 
+  startButton.addEventListener(
+    "click",
+    function(){
+      startButton.style.display="none";
+    }
+  );
+  
   stopButton.addEventListener(
     "click",
     function () {
