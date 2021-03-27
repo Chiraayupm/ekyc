@@ -41,24 +41,27 @@
     </div>
 </div>
 
+  <h3 class="text-center" id="prompt_text">Time to record your video </h3>
 
   <div class="left">
     <div id="startButton" class="offset-md-3 button btn btn-success col-md-6 justify-content-center align-items-center">Click to start video</div>
 
     <div class="container">
       <div class="row">
-        <div class="offset-md-3">
-          <h2>Preview</h2>
-           <video id="preview" width="800" height="420" autoplay muted></video>
+        <div class="mx-auto">
+          <h2 id="warn_text" class="mx-auto">Hold still while we are recording your video</h2>
+           <video id="preview" width="900" height="480" class="mr-3 pr-3" autoplay muted></video>
           </div>
       </div>
       </div>
-    <div class="right">
-      <div id="stopButton" class="button">Stop</div>
-      <h2>Recording</h2>
-      <video id="recording" width="160" height="120" controls></video>
-      <a id="downloadButton" class="button"> Download </a>
-    </div>
+    <div class="row">
+      <div class="mx-auto">
+        <div id="stopButton" class="button">Stop</div>
+        <h2 id="record_text" class="mx-auto">Recorded video, refresh to re-record</h2>
+        <video id="recording" width="900" height="480" controls></video>
+        <a id="downloadButton" class="offset-md-3 button btn btn-success col-md-6 justify-content-center align-items-center py-4 my-4"> Submit video</a>
+        </div>
+      </div>
   </div>
 </form>
 
@@ -72,8 +75,18 @@
   let myForm = document.getElementById("myForm");
   let recordingTimeMS = 10000;
   let recordedBlob;
+  let warn_text = document.getElementById("warn_text");
+  let record_text = document.getElementById("record_text");
+  let prompt_text = document.getElementById("prompt_text");
+  let bgimg = document.getElementById("bgimg")
 
-  recording.style.display="none"
+
+  bgimg.style.display="none";
+  warn_text.style.display="none";
+  recording.style.display="none";
+  stopButton.style.display="none";
+  record_text.style.display="none";
+  downloadButton.style.display="none";
   function log(msg) {
     //logElement.innerHTML += msg + "\n";
   }
@@ -85,7 +98,7 @@
   function startRecording(stream, lengthInMS) {
     let recorder = new MediaRecorder(stream);
     let data = [];
-
+    warn_text.style.display="block";
     recorder.ondataavailable = (event) => data.push(event.data);
     recorder.start();
     log(recorder.state + " for " + lengthInMS / 1000 + " seconds...");
@@ -126,7 +139,11 @@
           recordedBlob = new Blob(recordedChunks, { type: "video/mp4" });
           console.log(recordedBlob);
           recording.src = URL.createObjectURL(recordedBlob);
-
+          warn_text.style.display="none";
+          record_text.style.display="block";
+          downloadButton.style.display="block"
+          prompt_text.style.display="none";
+          startButton.style.display="none";
           downloadButton.href = recording.src;
           downloadButton.download = "RecordedVideo.mp4";
           preview.style.display="none";
