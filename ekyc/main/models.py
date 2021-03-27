@@ -4,7 +4,6 @@ from django.contrib.auth import models as mod
 # Create your models here.
 
 class Profile(models.Model):
-    phone = models.CharField(max_length=50)
     aadhar_no = models.CharField(max_length=50)
     pan_no = models.CharField(max_length=50)
     is_kyc_verified = models.BooleanField(default=False)

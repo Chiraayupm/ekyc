@@ -19,35 +19,39 @@
                     Name
                 </span>
                 
-                <h3>MyName</h3>
+                <h3>{{ prof.user.first_name }} {{ prof.user.last_name }}</h3>
             </div>
 
             <div class="input-box">
                 <span class="details">
                     Email
                 </span>
-                <h3>MyEmail</h3>
+                <h3>{{ prof.user.email }}</h3>
             </div>
 
             <div class="input-box">
                 <span class="details">
                     Aadhar Card no.
                 </span>
-                <h3>4874678347</h3>
+                <h3>{{ prof.aadhar_no }}</h3>
             </div>
 
             <div class="input-box">
                 <span class="details">
                     Pan card no.
                 </span>
-                <h3>37848949329</h3>
+                <h3>{{ prof.pan_no }}</h3>
             </div>
 
             <div class="input-box">
                 <span class="details">
                     KYC status
                 </span>
-                <h3>Some bool val</h3>
+                {% if prof.is_kyc_verified %}
+                    <h3>Your KYC is verified.</h3>
+                {% else %}
+                    <h3>Your KYC is not verified.</h3>
+                {% endif %}
             </div>
         </div>
 

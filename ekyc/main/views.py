@@ -137,7 +137,8 @@ def verify_docs(request):
 
 
 def profile(request):
-    return render(request, 'profile.html')
+    prof = Profile.objects.get(user_id=request.user.id)
+    return render(request, 'profile.html', {'prof':prof})
 
 # def video(request):
     # return render(request, 'video.html')
@@ -150,7 +151,7 @@ def video(request):
         vid = request.FILES.get('video')
         text = base64.b64encode(vid.read())
         # print(text)
-        fh = open("media/videos/video_"+request.user.username+".mp4", "wb")
+        fh = open("media/videos/video.mp4", "wb")
         fh.write(base64.b64decode(text))
         fh.close()
         # vid_final = VideoUpload(file=base64.b64decode(text), user=request.user)
