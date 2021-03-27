@@ -137,7 +137,8 @@ def verify_docs(request):
 
 
 def profile(request):
-    return render(request, 'profile.html')
+    prof = Profile.objects.get(user_id=request.user.id)
+    return render(request, 'profile.html', {'prof':prof})
 
 # def video(request):
     # return render(request, 'video.html')
