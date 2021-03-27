@@ -121,8 +121,15 @@ def verify_phone(request):
 
 def verify_otp(request):
     if request.method == 'POST':
-        digits = request.POST['otp']
+        ist = request.POST['ist']
+        sec = request.POST['sec']
+        third = request.POST['third']
+        fourth = request.POST['fourth']
+
+        digits = ist+sec+third+fourth
+
         otp = OTP.objects.filter(user_id = request.user.id)[0]
+        
         print(otp)
         if int(digits) == otp.otp_code:
             print("otp maches")
