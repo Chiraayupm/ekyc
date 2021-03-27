@@ -2,6 +2,10 @@
 
 <form action="" id="myForm" enctype="multipart/form-data">
 
+{% block pgcss %}
+
+<link rel="stylesheet" href="{% static 'css/video.css' %}">
+{% endblock pgcss %}
 
     {% csrf_token %}
 
@@ -12,26 +16,26 @@
 
             <!-- add disabled afterwards -->
             
-            <a href="" type="button" class="btn btn-primary btn-circle">1</a>
-            <p class="step">Step 1</p>
+            <a href="" type="button" class="btn btn-default btn-circle disabled bg-primary text-light">1</a>
+            <p class="step_">Step 1</p>
         </div>
         <div class="stepwizard-step">
-            <a href="" type="button" class="btn btn-default btn-circle disabled bg-light">2</a>
-            <p class="step">Step 2</p>
+            <a href="" type="button" class="btn btn-default btn-circle disabled bg-primary text-light">2</a>
+            <p class="step_">Step 2</p>
         </div>
         <div class="stepwizard-step">
-            <a href="" type="button" class="btn btn-default btn-circle disabled bg-light">3</a>
-            <p class="step">Step 3</p>
-        </div>
-        
-        <div class="stepwizard-step">
-            <a href="" type="button" class="btn btn-default btn-circle disabled bg-light">4</a>
-            <p class="step">Step 4</p>
+            <a href="" type="button" class="btn btn-default btn-circle disabled bg-primary text-light">3</a>
+            <p class="step_">Step 3</p>
         </div>
         
         <div class="stepwizard-step">
-            <a href="" type="button" class="btn btn-default btn-circle disabled bg-light">5</a>
-            <p class="step">Step 5</p>
+            <a href="" type="button" class="btn btn-default btn-circle disabled bg-primary text-light">4</a>
+            <p class="step_">Step 4</p>
+        </div>
+        
+        <div class="stepwizard-step">
+            <a href="" type="button" class="btn btn-primary btn-circle">5</a>
+            <p class="step_">Step 5</p>
         </div>
         
     </div>
@@ -39,16 +43,22 @@
 
 
   <div class="left">
-    <div id="startButton" class="button btn btn-success">Start</div>
-    <h2>Preview</h2>
-    <video id="preview" width="160" height="120" autoplay muted></video>
-  </div>
+    <div id="startButton" class="offset-md-3 button btn btn-success col-md-6 justify-content-center align-items-center">Click to start video</div>
 
-  <div class="right">
-    <div id="stopButton" class="button">Stop</div>
-    <h2>Recording</h2>
-    <video id="recording" width="160" height="120" controls></video>
-    <a id="downloadButton" class="button"> Download </a>
+    <div class="container">
+      <div class="row">
+        <div class="offset-md-3">
+          <h2>Preview</h2>
+           <video id="preview" width="800" height="420" autoplay muted></video>
+          </div>
+      </div>
+      </div>
+    <div class="right">
+      <div id="stopButton" class="button">Stop</div>
+      <h2>Recording</h2>
+      <video id="recording" width="160" height="120" controls></video>
+      <a id="downloadButton" class="button"> Download </a>
+    </div>
   </div>
 </form>
 
@@ -63,6 +73,7 @@
   let recordingTimeMS = 10000;
   let recordedBlob;
 
+  recording.style.display="none"
   function log(msg) {
     //logElement.innerHTML += msg + "\n";
   }
@@ -118,7 +129,8 @@
 
           downloadButton.href = recording.src;
           downloadButton.download = "RecordedVideo.mp4";
-
+          preview.style.display="none";
+          recording.style.display="block"
           log(
             "Successfully recorded " +
               recordedBlob.size +
