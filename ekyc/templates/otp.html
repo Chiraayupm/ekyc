@@ -5,12 +5,41 @@
 
 <link rel="stylesheet" href="{% static 'css/profile.css' %}">
 <link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+<style>
+    .userInput{
+	display: flex;
+	justify-content: center;
+}
+
+input{
+	margin: 10px;
+	height: 35px;
+	width: 65px;
+	border: none;
+	border-radius: 5px;
+	text-align: center;
+	font-family: arimo;
+	font-size: 1.2rem;
+	background: #eef2f3;
+
+}
+
+h1{
+	text-align: center;
+	font-family: arimo;
+	color: honeydew;
+}
+
+
+</style>
 {% endblock pgcss %}
 
 {% block content %}
+
 <form method="POST" role="form">
 {% csrf_token %}
-    
+
     <div class="container">
     <div class="stepwizard">
     <div class="stepwizard-row setup-panel">
@@ -46,19 +75,39 @@
     <div class="row setup-content" id="step-2">
         <!-- <div class="col-xs-12"> -->
             <div class="col-md-12">
-                <h3> Step 2</h3>
-                <div class="form-group">
+                <!-- <h3> Step 2</h3> -->
+                <div class="form-group text-center text-bold">
                     <label class="control-label">Enter OTP</label>
+                    <!-- 
                     <input maxlength="4" minlength="4" type="tel" class="form-control" placeholder="XXXX" name="otp" required/>
+                     -->
+                    
+                    <div class="userInput">
+                        <input type="text" id='ist' name="ist" maxlength="1" onkeyup="clickEvent(this,'sec')">
+                        <input type="text" id="sec" name="sec" maxlength="1" onkeyup="clickEvent(this,'third')">
+                        <input type="text" id="third" name="third" maxlength="1" onkeyup="clickEvent(this,'fourth')">
+                        <input type="text" id="fourth" name="fourth" maxlength="1">
+            		</div>
                 </div>
 
                 <div class="button">
-                    <button type="submit" id="submit" > Next Step </button>
+                    <button type="submit" id="submit"> Next Step </button>
                 </div>
                 
 
             </div>
         <!-- </div> -->
     </div>
+
+    <script>
+
+        function clickEvent(first,last){
+			if(first.value.length){
+				document.getElementById(last).focus();
+			}
+		}
+        
+        
+    </script>
 </form>
 {% endblock content %}
