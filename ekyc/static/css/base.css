@@ -2,11 +2,11 @@ body{
     font-family: 'Poppins', sans-serif;
     font-family: 'Roboto', sans-serif;
     background-color: #f7f7f7;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6));
 }
 
 #bgimg{
 	position:absolute;
-	/*transform: translate(-50%,-50%);*/
 	display: block;
 	opacity: 0.1;
 	border:none;
