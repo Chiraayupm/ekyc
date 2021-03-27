@@ -2,7 +2,7 @@
 	background:none;
 }
 #imgBox{
-	display: flex;
+	display: block;
 	justify-content: center;
 	/* padding: 20px; */
 	position: relative;
@@ -10,13 +10,13 @@
 	/* z-index: 1; */
 
 }
-#kyc{
+#kyc #kyc1{
 	width: 90%;
 	position: relative;
 	margin-left: 3%;
 	justify-content: center;
 }
-#contBox{
+#contBox {
 	display: block;
 	position: relative;
 	justify-content: center;
@@ -31,7 +31,7 @@ h1 {
 }
 p{
 	color: #4a4e4d;
-	text-decoration: none;
+	text-decoration: uppercase;
 	margin-top: 15px;
 	font-size: large;
 }
@@ -51,6 +51,14 @@ p{
 	background-color: #444 !important;
 	color:white !important;
 
+}
+#contBox1{
+	display: flex;
+	position: relative;
+	justify-content: center;
+	padding: 20px;
+	margin-top: 40px;
+	/* z-index: 1; */
 }
 
 
