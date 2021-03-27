@@ -6,6 +6,7 @@ body{
 }
 
 #bgimg{
+    z-index: -1;
 	position:absolute;
 	display: block;
 	opacity: 0.1;
