@@ -1,6 +1,6 @@
-.phone-form .input-text{
+.phone-form .input-text .aadharPan-form{
     display: block;
-    width: 100%;
+    width: 100%; 
     height: 36px;
     border-width: 0 0 2px 0;
     border-color: #6c19fcc2;
@@ -9,11 +9,11 @@
     font-weight: 400;
 }
 
-.phone-form .input-text:focus{
+.phone-form .aadharPan-form .input-text:focus{
     outline: none;
 }
 
-.phone-form .label{
+.phone-form .aadharPan-form .label{
     position: absolute;
     left: 20px;
     bottom: 11px;
@@ -25,7 +25,7 @@
     transition: all 0.4s;
 }
 
-.phone-form .submit-btn{
+.phone-form .aadharPan-form .submit-btn{
     display: inline-block;
     background-image: linear-gradient(125deg, #a72879, #064497);
     color: #ffffff;

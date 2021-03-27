@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import models as userModel
+from django.views.decorators.csrf import csrf_exempt
 from .models import *
 
 def index(request):
@@ -10,11 +11,10 @@ def register(request):
     if request.method == 'POST':
         fname = request.POST['fname']
         lname = request.POST['lname']
+        username = request.POST['username']
         email = request.POST['email']
         password1 = request.POST['password1']
         password2 = request.POST['password2']
-
-        username = fname + " " + lname
 
         if password1 == password2:
             if userModel.User.objects.filter(username=username).exists():
@@ -79,7 +79,7 @@ def verify_ids(request):
             messages.info(request, 'Invalid aadhar number.')
 
     else:
-        return render(request, 'verify.html')
+        return render(request, 'aadharPan.html')
 
 def verify_phone(request):
     if request.method == 'POST':
@@ -138,3 +138,17 @@ def verify_docs(request):
 
 def profile(request):
     return render(request, 'profile.html')
+
+# def video(request):
+    # return render(request, 'video.html')
+
+@csrf_exempt
+def video(request):
+    if request.method == "POST":
+        print(request.FILES.get('video'))
+        vid = VideoUpload(file=request.FILES.get('video'), user=request.user)
+        vid.save()
+        return redirect('/')
+    else:
+        return render(request, 'video.html')
+

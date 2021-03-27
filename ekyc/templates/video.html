@@ -1,41 +1,31 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
-<form id="videoRec" action="" enctype="multipart/form-data" method="POST">
+
+<form action="" id="myForm" enctype="multipart/form-data">
     {% csrf_token %}
   <div class="left">
     <div id="startButton" class="button">Start</div>
-
-    <!-- -->
     <h2>Preview</h2>
-    <video id="preview" width="160" height="120" autoplay muted>
-        <source type="video/mp4">
-    </video>
-    <!-- -->
+    <video id="preview" width="160" height="120" autoplay muted></video>
   </div>
 
   <div class="right">
     <div id="stopButton" class="button">Stop</div>
-
     <h2>Recording</h2>
-    <video id="recording" width="200" height="120" controls>
-        <source type="video/mp4">
-
-    </video>
-
-     <!-- <a id="downloadButton" class="button"> Download </a> {% -->
-    
-    <button id="submitButton" class="button" type="submit">Submit</button>
+    <video id="recording" width="160" height="120" controls></video>
+    <a id="downloadButton" class="button"> Download </a>
   </div>
 </form>
+
 <script>
-  let myForm = document.getElementById("videoRec");
   let preview = document.getElementById("preview");
   let recording = document.getElementById("recording");
   let startButton = document.getElementById("startButton");
   let stopButton = document.getElementById("stopButton");
   let downloadButton = document.getElementById("downloadButton");
   let logElement = document.getElementById("log");
-    let submitButton = document.getElementById("submitButton");
-  let recordingTimeMS = 3000;
+  let myForm = document.getElementById("myForm");
+  let recordingTimeMS = 5000;
+  let recordedBlob;
 
   function log(msg) {
     //logElement.innerHTML += msg + "\n";
@@ -48,7 +38,6 @@
   function startRecording(stream, lengthInMS) {
     let recorder = new MediaRecorder(stream);
     let data = [];
-    lengthInMS = 3000;
 
     recorder.ondataavailable = (event) => data.push(event.data);
     recorder.start();
@@ -82,24 +71,18 @@
           preview.srcObject = stream;
           downloadButton.href = stream;
           preview.captureStream =
-          preview.captureStream || preview.mozCaptureStream;
+            preview.captureStream || preview.mozCaptureStream;
           return new Promise((resolve) => (preview.onplaying = resolve));
         })
         .then(() => startRecording(preview.captureStream(), recordingTimeMS))
-          .then(()=> preview.style.display)
         .then((recordedChunks) => {
-          const recordedBlob = new Blob(recordedChunks, { type: "video/mp4" });
-          recording.src = URL.createObjectVideo(recordedBlob);
-          console.log(recording.src);
+          recordedBlob = new Blob(recordedChunks, { type: "video/mp4" });
+          console.log(recordedBlob);
+          recording.src = URL.createObjectURL(recordedBlob);
+
           downloadButton.href = recording.src;
           downloadButton.download = "RecordedVideo.mp4";
-        //   const endpoint = "upload";
-          //const formData = new FormData();
-          // let recordedBlob = new Blob(recordedChunks, { type: "video/mp4" });
-          //  recording.src = URL.createObjectVideo(recordedBlob);
-          //  console.log(recording.src);
 
-          formData.append("recording", recording.src);
           log(
             "Successfully recorded " +
               recordedBlob.size +
@@ -113,23 +96,6 @@
     false
   );
 
-  submitButton.addEventListener("submit", (e) => {
-    e.preventDefault();
-    // const formData = new FormData();
-    console.log("heelo");
-        const recordedChunks = (e) => {
-        const recordedBlob = new Blob(recordedChunks, { type: "video/mp4" });
-        recording.src = URL.createObjectVideo(recordedBlob);
-        console.log(recording.src);
-            //   downloadButton.href = recording.src;
-            //   downloadButton.download = "RecordedVideo.mp4";
-        const endpoint = "upload";
-        const formData = new FormData();
-        formData.append("recording", recording.src);
-    }
-
-  });
-
   stopButton.addEventListener(
     "click",
     function () {
@@ -137,6 +103,20 @@
     },
     false
   );
+
+  downloadButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    const endpt = "upload";
+    const formData = new FormData();
+    console.log(recordedBlob);
+    formData.append("video", recordedBlob);
+    
+    fetch(endpt, {
+      method: "POST", 
+      body: formData,
+      
+    }).catch(log);
+  });
 </script>
 
 {% endblock content %}
