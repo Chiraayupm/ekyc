@@ -20,17 +20,27 @@
 
             <!-- add disabled afterwards -->
             
-                  <a href="" type="button" class="btn btn-primary btn-circle">1</a>
-                  <p class="step">Step 1</p>
-              </div>
-              <div class="stepwizard-step">
-                  <a href="" type="button" class="btn btn-default btn-circle ">2</a>
-                  <p class="step">Step 2</p>
-              </div>
-              <div class="stepwizard-step">
-                  <a href="" type="button" class="btn btn-default btn-circle">3</a>
-                  <p class="step">Step 3</p>
-              </div>
+            <a href="" type="button" class="btn btn-default btn-circle disabled bg-primary text-light">1</a>
+            <p class="step">Step 1</p>
+        </div>
+        <div class="stepwizard-step">
+            <a href="" type="button" class="btn btn-default btn-circle disabled bg-primary text-light">2</a>
+            <p class="step">Step 2</p>
+        </div>
+        <div class="stepwizard-step">
+            <a href="" type="button" class="btn btn-primary btn-circle">3</a>
+            <p class="step">Step 3</p>
+        </div>
+        
+        <div class="stepwizard-step">
+            <a href="" type="button" class="btn btn-default btn-circle disabled bg-light ">4</a>
+            <p class="step">Step 4</p>
+        </div>
+        
+        <div class="stepwizard-step">
+            <a href="" type="button" class="btn btn-default btn-circle disabled bg-light">5</a>
+            <p class="step">Step 5</p>
+        </div>
         
     </div>
 </div>
@@ -57,4 +67,7 @@
         </div>
     </div>
 </form>
+{% for message in messages %}
+    <h3>{{ message }}</h3>
+{% endfor %}
 {% endblock content %}
