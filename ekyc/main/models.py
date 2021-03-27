@@ -47,4 +47,4 @@ class OTP(models.Model):
     user = models.ForeignKey(mod.User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.otp_code
+        return str(self.otp_code)

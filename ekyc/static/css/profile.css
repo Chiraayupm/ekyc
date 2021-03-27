@@ -1,0 +1,125 @@
+
+/* hsl(210, 36%, 96%) */
+.container{
+    /* display: flex; */
+    /* height: 100vh; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    background-color: #f1f5f8 ;
+
+    max-width: 700px;
+    width: 100%;
+    background: #0043B3;
+    padding: 25px 30px;
+    border-radius: 5px;
+    color: white;
+}
+
+.container .title{
+    font-size: 25px;
+    font-weight: 500;
+    position: relative; 
+}
+
+
+.container .title::before{
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 140px;
+    background: rgb(241, 245, 248) ;
+    left: 0;
+    bottom: 0;
+}
+
+.container form .user-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+
+form .user-details .input-box{
+    margin-bottom: 15px;
+    margin: 20px 0 12px 0;
+    width: calc(100%/2 - 20px);
+}
+
+.user-details .input-box .details{
+    font-weight: 500;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.user-details .input-box input{
+    background: #0043B3;
+    /* currentColor:rgb(241, 245, 248) */
+
+}
+
+.user-details .input-box input{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 2px;
+    border-width: 0 0px 1px 0 !important;
+    border: 1px solid white !important;
+    font-size: 16px;
+}
+
+form .user-details .input-box:focus,
+form .user-details .input-box:valid{
+    border-color: #f1f5f8;
+}
+
+form .user-details .input-box:active{
+    color: white;
+}
+
+form .user-details .input-box::placeholder{
+    color: white;
+}
+
+
+form .button{
+    height: 45px;
+    margin: 45px 0;
+}
+
+form .button input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: #fff;
+    background-color: #f1f5f8;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    color: #0043B3;
+}
+
+form .button input:hover{
+    background:#001D4D ;
+    cursor: pointer;
+}
+
+@media(max-width: 584px){
+    .container{
+    max-width: 100%;
+    }
+    form .user-details .input-box{
+    margin-bottom: 15px;
+    margin: 20px 0 12px 0;
+    width: 100%;
+    }
+    .container form .user-details{
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+}   
+
+#phonetext{
+    color: white;
+}
