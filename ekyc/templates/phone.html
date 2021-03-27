@@ -48,12 +48,9 @@
     <div class="phone-form">
         <div class="row" id="step-1">
             <div class="col-md-12"> 
-                <div class="input-box">
-                    <span class="details" id="phonetext">
-                     Enter Phone num
-                    </span>
+                <div class="input-box text-center py-3">
                     <!-- id=phonebox -->
-                    <input placeholder="" maxlength="10" id="phone" class="form-control" placeholder="10 digit phone num" type="tel" required aria-required="true" name="phone">
+                    <input maxlength="10" id="phone" class="form-control" placeholder="Enter your phone number" type="tel" required aria-required="true" name="phone">
                 </div>
                 <div class="button">
                     
@@ -67,7 +64,9 @@
         </div>
     </div>
 </form>
-
+{% for message in messages %}
+    {{ message }}
+{% endfor %}
 
 {% endblock content %}
 

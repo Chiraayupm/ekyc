@@ -67,19 +67,22 @@ def verify_ids(request):
         aadhar_no = request.POST['aadhar_no']
         pan_no = request.POST['pan_no']
 
-        profile = Profile.objects.get(user=request.user.id)
+        if len(aadhar_no) == 12 and aadhar_no.isdigit() and len(pan_no) == 10:
+            profile = Profile.objects.get(user=request.user.id)
 
-        if profile.aadhar_no == aadhar_no:
-            if profile.pan_no == pan_no:
-                messages.info(request, 'Valid details.')
-                return redirect('verifydocs')
+            if profile.aadhar_no == aadhar_no:
+                if profile.pan_no == pan_no:
+                    messages.info(request, 'Valid details.')
+                    return redirect('verifydocs')
+                else:
+                    messages.info(request, 'Invalid pancard number.')
+                    return redirect('verifyids')
             else:
-                messages.info(request, 'Invalid pancard number.')
+                messages.info(request, 'Invalid aadhar number.')
                 return redirect('verifyids')
         else:
-            messages.info(request, 'Invalid aadhar number.')
+            messages.error(request, "Enter valid details.")
             return redirect('verifyids')
-
     else:
         return render(request, 'aadharPan.html')
 
@@ -87,34 +90,46 @@ def verify_phone(request):
     if request.method == 'POST':
         phone = request.POST['phone']
         print(phone)
-        import twilio
-        # Download the helper library from https://www.twilio.com/docs/python/install
-        from twilio.rest import Client
-        import random # generate random number
-        otp = random.randint(1000,9999)
-        OTP.objects.create(otp_code=otp, user=request.user)
-        print("Generated OTP is - ",otp)
-        # Your Account Sid and Auth Token from twilio.com/console
-        # DANGER! This is insecure. See http://twil.io/secure
-        account_sid = 'AC703679e4bfdc618b2c00d92b79be454c'
-        auth_token = '49fb345bb91b32322a28a510da05aa6e'
-        client = Client(account_sid, auth_token)
+        if len(phone) == 10 and phone.isdigit():
+            import twilio
+            # Download the helper library from https://www.twilio.com/docs/python/install
+            from twilio.rest import Client
+            import random # generate random number
+            otp = random.randint(1000,9999)
+            OTP.objects.create(otp_code=otp, user=request.user)
+            print("Generated OTP is - ",otp)
+            # Your Account Sid and Auth Token from twilio.com/console
+            # DANGER! This is insecure. See http://twil.io/secure
+            account_sid = 'AC703679e4bfdc618b2c00d92b79be454c'
+            auth_token = '49fb345bb91b32322a28a510da05aa6e'
+            client = Client(account_sid, auth_token)
 
-        message = client.api.account.messages.create(
-                body='Hello Dear, ' + request.user.username +'Your Secure Device OTP is - ' + str(otp),
-                from_='+18102165640',
-                to='+91'+ phone
-            )
+            message = client.api.account.messages.create(
+                    body='Hello Dear, ' + request.user.username +'Your Secure Device OTP is - ' + str(otp),
+                    from_='+18102165640',
+                    to='+91'+ phone
+                )
 
-        print(message.sid)
-        return redirect('verifyotp')
+            print(message.sid)
+            return redirect('verifyotp')
+        else:
+            messages.error(request, "Please enter a valid phone number.")
+            return redirect('verifyphone')
+
     else:
         return render(request, 'phone.html')
 
 def verify_otp(request):
     if request.method == 'POST':
-        digits = request.POST['otp']
+        ist = request.POST['ist']
+        sec = request.POST['sec']
+        third = request.POST['third']
+        fourth = request.POST['fourth']
+
+        digits = ist+sec+third+fourth
+
         otp = OTP.objects.filter(user_id = request.user.id)[0]
+
         print(otp)
         if int(digits) == otp.otp_code:
             print("otp maches")
@@ -122,8 +137,16 @@ def verify_otp(request):
             return redirect('verifyids') #redirect to verify video later
         else:
             print("otp didnt match")
+            messages.error(request, "OTP did not match.")
+            otp.delete()
+            return redirect('verifyotp')
     else:
         return render(request, 'otp.html')
+
+def delete_otp(request):
+    otp = OTP.objects.filter(user_id = request.user.id)[0]
+    otp.delete()
+    return redirect('verifyphone')
 
 def verify_docs(request):
     if request.method == 'POST':

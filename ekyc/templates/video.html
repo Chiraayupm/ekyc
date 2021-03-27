@@ -59,9 +59,11 @@
         <div id="stopButton" class="button">Stop</div>
         <h2 id="record_text" class="mx-auto">Recorded video, refresh to re-record</h2>
         <video id="recording" width="900" height="480" controls></video>
-        <button id="downloadButton" type = "submit" class="offset-md-3 button btn btn-success col-md-6 justify-content-center align-items-center py-4 my-4">
-          Submit video
-        </button>
+        <a href="{% url 'verifyprofile' %}">
+          <button id="downloadButton" type = "submit" class="offset-md-3 button btn btn-success col-md-6 justify-content-center align-items-center py-4 my-4">
+            Submit video
+          </button>
+        </a>
         </div>
       </div>
   </div>
@@ -195,9 +197,9 @@
       window.alert("Please have patience, we are processing your request, you will be redirected to another page soon")
     }, 500)
 
-     window.setTimeout( function(){
-        window.location = "profile/";
-      }, 20000 );
+    window.setTimeout( function(){
+    window.location = "/profile/";
+    }, 20000 );
 
   });
 </script>
