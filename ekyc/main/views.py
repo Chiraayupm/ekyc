@@ -180,11 +180,7 @@ def verification():
 
 
             cv2.resize(img,(width,heigh))
-<<<<<<< HEAD
-            cv2.imwrite('C:/Users/SHYREN/Desktop/codecell/ekyc/main/vid_ss/camera' + str(i) + '.jpeg', img)
-=======
             cv2.imwrite('C:/Users/varun/codecell/ekyc/main/vid_ss/camera' + str(i) + '.jpeg', img)
->>>>>>> b37aa915bb8ded19a38ff428a5f37621c2822e60
             i += 1
 
 
@@ -219,21 +215,13 @@ def verification():
 
 
     if flag == 0:
-<<<<<<< HEAD
-            path = 'C:/Users/SHYREN/Desktop/codecell/ekyc/main/vid_ss'
-=======
             path = 'C:/Users/varun/codecell/ekyc/main/vid_ss'
->>>>>>> b37aa915bb8ded19a38ff428a5f37621c2822e60
 
             n = (len(os.listdir(path)))
             values = []
             values1 = []
             for i in range(n):
-<<<<<<< HEAD
-                img = face_recognition.load_image_file('C:/Users/SHYREN/Desktop/codecell/ekyc/main/vid_ss/camera'+str(i)+'.jpeg')
-=======
                 img = face_recognition.load_image_file('C:/Users/varun/codecell/ekyc/main/vid_ss/camera'+str(i)+'.jpeg')
->>>>>>> b37aa915bb8ded19a38ff428a5f37621c2822e60
                 img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
                 face_loc = face_recognition.face_locations(img)
                 if not len(face_loc):
