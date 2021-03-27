@@ -129,7 +129,7 @@ def verify_otp(request):
         digits = ist+sec+third+fourth
 
         otp = OTP.objects.filter(user_id = request.user.id)[0]
-        
+
         print(otp)
         if int(digits) == otp.otp_code:
             print("otp maches")
@@ -142,6 +142,11 @@ def verify_otp(request):
             return redirect('verifyotp')
     else:
         return render(request, 'otp.html')
+
+def delete_otp(request):
+    otp = OTP.objects.filter(user_id = request.user.id)[0]
+    otp.delete()
+    return redirect('verifyphone')
 
 def verify_docs(request):
     if request.method == 'POST':
