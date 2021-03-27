@@ -11,12 +11,13 @@
 
 
 {% block content %}
-<form method="POST" enctype="multipart/form-data" role="form">
+<form method="POST" enctype="multipart/form-data" role="form" id="box">
 
     {% csrf_token %}
 
-    <div class="container">
+    <div class="container" id="box" style="margin-top: 0%;">
         <div class="stepwizard">
+        <div class="stepwizard-row setup-panel">
             <div class="stepwizard-step">
 
             <!-- add disabled afterwards -->
@@ -42,7 +43,7 @@
             <a href="" type="button" class="btn btn-default btn-circle disabled bg-light">5</a>
             <p class="step">Step 5</p>
         </div>
-        
+    </div>
         
     </div>
 
@@ -84,4 +85,8 @@
 
     <button type="submit" class="btn btn-sucess btn-light btn-block mt-4">Finish</button>
 </form>
+
+
+
+
 {% endblock content %}
