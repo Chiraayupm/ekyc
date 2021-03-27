@@ -51,31 +51,25 @@
     <!--Navbar-->
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="/"></a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav  ml-auto">
         {% if user.is_authenticated %}
-        <a  href="/"><h5 class="pt-2">Hello, {{ user.first_name }}</h5></a>
+        {% comment %} <a  href="/"><h5 class="pt-2">Hello, {{ user.first_name }}</h5></a> {% endcomment %}
+        <div id="box">
+          <a class="nav-item nav-link  "  role="button" id="link" href="logout">Logout</a>
+        </div>
         
-        <a class="nav-item nav-link" href="logout">Logout</a>
-        {% comment %} <a class="nav-item nav-link" href="mydashboard">My DashBoard</a> {% endcomment %}
-      <li class="nav-item ">
-        <a class="nav-link" style="color: black;"  href="#" role="button" >My Profile</a>
-      </li>
+      <div id="box">
+      <a class="nav-item nav-link  "  id="link"  href="#" role="button" >My Profile</a>
+        </div>
+       
+      
       {% else %}
-
-      <a class="nav-item nav-link loginLink" href="login">Login</a>
-      {% comment %} <a class="nav-item nav-link" href="register">Register</a> {% endcomment %}
+<div id="box">
+<a class="nav-item nav-link " role="button" id="link" href="login">Login</a>
+        </div>
+      
       {% endif %}
         </div>
       </div>
