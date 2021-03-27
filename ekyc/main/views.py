@@ -72,11 +72,13 @@ def verify_ids(request):
         if profile.aadhar_no == aadhar_no:
             if profile.pan_no == pan_no:
                 messages.info(request, 'Valid details.')
-                redirect('verifyphone')
+                return redirect('verifyphone')
             else:
                 messages.info(request, 'Invalid pancard number.')
+                return redirect('verifyids')
         else:
             messages.info(request, 'Invalid aadhar number.')
+            return redirect('verifyids')
 
     else:
         return render(request, 'aadharPan.html')
