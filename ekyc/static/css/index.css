@@ -1,4 +1,6 @@
-
+*{
+	background:none;
+}
 #imgBox{
 	display: flex;
 	justify-content: center;
