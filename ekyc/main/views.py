@@ -59,6 +59,9 @@ def logout(request):
     userModel.auth.logout(request)
     return redirect('/')
 
+def video(request):
+    return render(request, "video.html")
+
 def verify_ids(request):
     if request.method == 'POST':
         aadhar_no = request.POST['aadhar_no']
