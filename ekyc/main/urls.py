@@ -13,5 +13,6 @@ urlpatterns = [
     path('profile/', views.profile, name='verifyprofile'),
     path('video/', views.video),
     path('video/upload', views.video),
+    
 
 ]    
