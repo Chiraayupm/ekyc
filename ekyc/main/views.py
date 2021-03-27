@@ -72,11 +72,13 @@ def verify_ids(request):
         if profile.aadhar_no == aadhar_no:
             if profile.pan_no == pan_no:
                 messages.info(request, 'Valid details.')
-                redirect('verifyphone')
+                return redirect('verifydocs')
             else:
                 messages.info(request, 'Invalid pancard number.')
+                return redirect('verifyids')
         else:
             messages.info(request, 'Invalid aadhar number.')
+            return redirect('verifyids')
 
     else:
         return render(request, 'aadharPan.html')
@@ -117,7 +119,7 @@ def verify_otp(request):
         if int(digits) == otp.otp_code:
             print("otp maches")
             otp.delete()
-            return redirect('/') #redirect to verify video later
+            return redirect('verifyids') #redirect to verify video later
         else:
             print("otp didnt match")
     else:
@@ -131,7 +133,7 @@ def verify_docs(request):
         picture.save()
         idproof.save()
         addrproof.save()
-        return render(request, 'profile.html')
+        return redirect('video')
     else:
         return render(request, 'documents.html')
 
