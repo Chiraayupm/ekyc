@@ -133,7 +133,7 @@ def verify_docs(request):
         picture.save()
         idproof.save()
         addrproof.save()
-        return render(request, 'video.html')
+        return redirect('video')
     else:
         return render(request, 'documents.html')
 
