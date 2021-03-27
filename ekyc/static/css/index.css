@@ -39,16 +39,18 @@ p{
 	display: flex;
 	justify-content: center;
 }
-button{
+
+#procKyc{
 	justify-content: center;
 	border: 1px solid white;
 	border-radius: 20px;
 	box-shadow: 5px 5px 10px #ccc;
 
-}
-button:hover{
+} 
+ 
+#procKyc:hover{
 	background-color: #444 !important;
 	color:white !important;
 
-}
+} 
 
