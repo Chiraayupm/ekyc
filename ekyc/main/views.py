@@ -142,12 +142,19 @@ def profile(request):
 # def video(request):
     # return render(request, 'video.html')
 
+import base64
 @csrf_exempt
 def video(request):
     if request.method == "POST":
         print(request.FILES.get('video'))
-        vid = VideoUpload(file=request.FILES.get('video'), user=request.user)
-        vid.save()
+        vid = request.FILES.get('video')
+        text = base64.b64encode(vid.read())
+        # print(text)
+        fh = open("media/videos/video_"+request.user.username+".mp4", "wb")
+        fh.write(base64.b64decode(text))
+        fh.close()
+        # vid_final = VideoUpload(file=base64.b64decode(text), user=request.user)
+        # vid_final.save()
         return redirect('/')
     else:
         return render(request, 'video.html')
