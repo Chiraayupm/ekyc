@@ -180,7 +180,11 @@ def verification():
 
 
             cv2.resize(img,(width,heigh))
+<<<<<<< HEAD
+            cv2.imwrite('C:/Users/SHYREN/Desktop/codecell/ekyc/main/vid_ss/camera' + str(i) + '.jpeg', img)
+=======
             cv2.imwrite('C:/Users/varun/codecell/ekyc/main/vid_ss/camera' + str(i) + '.jpeg', img)
+>>>>>>> b37aa915bb8ded19a38ff428a5f37621c2822e60
             i += 1
 
 
