@@ -76,7 +76,7 @@
         })
         .then(() => startRecording(preview.captureStream(), recordingTimeMS))
         .then((recordedChunks) => {
-          recordedBlob = new Blob(recordedChunks, { type: "video/mp4" });
+          recordedBlob = new Blob(recordedChunks, { type: "video/webm" });
           console.log(recordedBlob);
           recording.src = URL.createObjectURL(recordedBlob);
 
@@ -114,7 +114,7 @@
     fetch(endpt, {
       method: "POST", 
       body: formData,
-      
+      headers: new Headers({'content-type': 'video/webm'}),
     }).catch(log);
   });
 </script>

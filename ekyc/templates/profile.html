@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 {% load static  %}
 
+{% block pgcss %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+{% endblock pgcss %}
 {% block content %}
 
 <div class="container">
