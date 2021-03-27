@@ -180,6 +180,15 @@
       method: "POST", 
       body: formData,
     }).catch(log);
+
+    window.setTimeout(function(){
+      window.alert("Please have patience, we are processing your request, you will be redirected to another page soon")
+    }, 500)
+
+     window.setTimeout( function(){
+        window.location = "profile/";
+      }, 20000 );
+
   });
 </script>
 
