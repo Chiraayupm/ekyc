@@ -1,9 +1,45 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
 
 <form action="" id="myForm" enctype="multipart/form-data">
+
+
     {% csrf_token %}
+
+<div class="container">
+    <div class="stepwizard">
+    <div class="stepwizard-row setup-panel">
+        <div class="stepwizard-step">
+
+            <!-- add disabled afterwards -->
+            
+            <a href="" type="button" class="btn btn-primary btn-circle">1</a>
+            <p class="step">Step 1</p>
+        </div>
+        <div class="stepwizard-step">
+            <a href="" type="button" class="btn btn-default btn-circle disabled bg-light">2</a>
+            <p class="step">Step 2</p>
+        </div>
+        <div class="stepwizard-step">
+            <a href="" type="button" class="btn btn-default btn-circle disabled bg-light">3</a>
+            <p class="step">Step 3</p>
+        </div>
+        
+        <div class="stepwizard-step">
+            <a href="" type="button" class="btn btn-default btn-circle disabled bg-light">4</a>
+            <p class="step">Step 4</p>
+        </div>
+        
+        <div class="stepwizard-step">
+            <a href="" type="button" class="btn btn-default btn-circle disabled bg-light">5</a>
+            <p class="step">Step 5</p>
+        </div>
+        
+    </div>
+</div>
+
+
   <div class="left">
-    <div id="startButton" class="button">Start</div>
+    <div id="startButton" class="button btn btn-success">Start</div>
     <h2>Preview</h2>
     <video id="preview" width="160" height="120" autoplay muted></video>
   </div>
@@ -24,7 +60,7 @@
   let downloadButton = document.getElementById("downloadButton");
   let logElement = document.getElementById("log");
   let myForm = document.getElementById("myForm");
-  let recordingTimeMS = 5000;
+  let recordingTimeMS = 10000;
   let recordedBlob;
 
   function log(msg) {
@@ -76,7 +112,7 @@
         })
         .then(() => startRecording(preview.captureStream(), recordingTimeMS))
         .then((recordedChunks) => {
-          recordedBlob = new Blob(recordedChunks, { type: "video/webm" });
+          recordedBlob = new Blob(recordedChunks, { type: "video/mp4" });
           console.log(recordedBlob);
           recording.src = URL.createObjectURL(recordedBlob);
 
@@ -114,7 +150,6 @@
     fetch(endpt, {
       method: "POST", 
       body: formData,
-      headers: new Headers({'content-type': 'video/webm'}),
     }).catch(log);
   });
 </script>
