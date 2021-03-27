@@ -115,6 +115,26 @@ form .button input:hover{
     cursor: pointer;
 }
 
+form .button button{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: #fff;
+    background-color: #f1f5f8;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    color: #0043B3;
+}
+
+form .button button:hover{
+    background:#001D4D !important;
+    color: white !important;
+    cursor: pointer;
+}
+
 @media(max-width: 584px){
     .container{
     max-width: 100%;

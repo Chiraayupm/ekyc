@@ -7,6 +7,27 @@
 <link rel="stylesheet" href="{% static 'css/index.css' %}">
 {% endblock pgcss %}
 {% block content %}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+
+    $(document).ready(function(){
+        $("#submit").click(function(){
+                // length, string or number
+            var inputVal = $("#phone").val();
+            if(inputVal.length == 10 && !(isNaN(inputVal))){
+
+            }
+            else{
+                $("#result").html("Not a valid number")
+            }
+        });
+    });
+
+</script>
+
+<div id="result" class="alert alert-warning alert-dismissible show" role="alert"></div>
+
 <form role="form" method="POST" action="" class="my-auto">
  {% csrf_token %}
     <div class="container">
@@ -49,16 +70,22 @@
                     <span class="details" id="phonetext">
                      Enter Phone num
                     </span>
-                    <input placeholder="" maxlength="10" class="form-control" placeholder="10 digit phone num" type="tel" required aria-required="true" name="phone">
+                    <!-- id=phonebox -->
+                    <input placeholder="" maxlength="10" id="phone" class="form-control" placeholder="10 digit phone num" type="tel" required aria-required="true" name="phone">
                 </div>
                 <div class="button">
-                <input type="submit" value="Next step" disabled>
+                    
+                    <!-- id=validate -->
+                <!-- <input type="submit" value="Next step" id="submit" disabled> -->
+                <button type="submit" id="submit" > Next Step </button>
                 </div>
 
+                
             </div>
         </div>
     </div>
 </form>
+
 
 {% endblock content %}
 

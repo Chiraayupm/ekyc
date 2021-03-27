@@ -4,7 +4,7 @@
 #imgBox{
 	display: flex;
 	justify-content: center;
-	padding: 20px;
+	/* padding: 20px; */
 	position: relative;
 	margin-top: 40px;
 	/* z-index: 1; */
@@ -39,16 +39,18 @@ p{
 	display: flex;
 	justify-content: center;
 }
-button{
+#procKyc{
 	justify-content: center;
-	border: 1px solid white;
+	border: 1px solid #ccc;
 	border-radius: 20px;
 	box-shadow: 5px 5px 10px #ccc;
 
-}
-button:hover{
+} 
+ 
+#procKyc:hover{
 	background-color: #444 !important;
 	color:white !important;
 
 }
+
 

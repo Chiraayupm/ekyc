@@ -24,6 +24,53 @@ body{
 		display: none;
 	}
 }
+/* nav{
+    border: none;
+    background-color: #f7f7f7;
+   
+} */
+#link{
+    position: relative;
+    padding: 15px 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+
+}
+
+#link:after {    
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 5px;
+    left: 50%;
+    position: absolute;
+    background-color: #0060ff;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+  #link:hover:after { 
+    width: 100%; 
+    left: 0; 
+  }
+
+/* #link:before{
+content: "";
+  position: absolute;
+  width: 100%;
+  height: 6px;
+  bottom: 0;
+  left: 0;
+  background-color: ;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
+}
+#link:hover:before{
+    visibility: visible;
+    transform: scaleX(0.8);
+} */
 .stepwizard-step p {
     margin-top: 10px;
 }
