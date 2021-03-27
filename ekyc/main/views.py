@@ -180,7 +180,7 @@ def verification():
 
 
             cv2.resize(img,(width,heigh))
-            cv2.imwrite('C:/Users/chira/Desktop/codecell/ekyc/main/vid_ss/camera' + str(i) + '.jpeg', img)
+            cv2.imwrite('C:/Users/varun/codecell/ekyc/main/vid_ss/camera' + str(i) + '.jpeg', img)
             i += 1
 
 
@@ -215,13 +215,13 @@ def verification():
 
 
     if flag == 0:
-            path = 'C:/Users/chira/Desktop/codecell/ekyc/main/vid_ss'
+            path = 'C:/Users/varun/codecell/ekyc/main/vid_ss'
 
             n = (len(os.listdir(path)))
             values = []
             values1 = []
             for i in range(n):
-                img = face_recognition.load_image_file('C:/Users/chira/Desktop/codecell/ekyc/main/vid_ss/camera'+str(i)+'.jpeg')
+                img = face_recognition.load_image_file('C:/Users/varun/codecell/ekyc/main/vid_ss/camera'+str(i)+'.jpeg')
                 img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
                 face_loc = face_recognition.face_locations(img)
                 if not len(face_loc):
@@ -306,9 +306,14 @@ def video(request):
         flag = verification()
         if flag == 0:
             print("Verified")
-
+            prof = Profile.objects.get(user_id=request.user.id)
+            prof.is_kyc_verified = True
+            prof.save()
+            return render(request, 'profile.html', {"is_kyc":True})
         else:
             print("Recheck")
+            mssg = "Please recheck your uploaded documents and ensure that there is proper lighting for the video. There was some problem in processing your request."
+            return render(request, 'documents.html', {"message":mssg})
         # vid_final = VideoUpload(file=base64.b64decode(text), user=request.user)
         # vid_final.save()
         return redirect('/')
