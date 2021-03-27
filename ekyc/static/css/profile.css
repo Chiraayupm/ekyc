@@ -34,7 +34,7 @@
 
 .container form .user-details{
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap:inherit;
     justify-content: space-between;
     margin: 20px 0 12px 0;
 }

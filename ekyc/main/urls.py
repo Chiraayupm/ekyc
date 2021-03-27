@@ -14,5 +14,4 @@ urlpatterns = [
     path('video/', views.video),
     path('video/upload', views.video),
     
-
 ]    

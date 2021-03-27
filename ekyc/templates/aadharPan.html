@@ -1,0 +1,70 @@
+{% extends 'base.html' %} 
+{% load static %}
+
+{% block pgtitle %}
+<title>Aadhar and Pan Details</title>
+{% endblock pgtitle %}
+
+{% block pgcss %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock pgcss %}
+
+{% block content %}
+  <form role="form" method="POST" action="">
+ {% csrf_token %}  
+     <div class="container">
+        <div class="stepwizard">
+            <div class="stepwizard-row setup-panel">
+              <div class="stepwizard-step">
+
+            <!-- add disabled afterwards -->
+            
+            <a href="" type="button" class="btn btn-default btn-circle disabled bg-light">1</a>
+            <p class="step">Step 1</p>
+        </div>
+        <div class="stepwizard-step">
+            <a href="" type="button" class="btn btn-default btn-circle disabled bg-light">2</a>
+            <p class="step">Step 2</p>
+        </div>
+        <div class="stepwizard-step">
+            <a href="" type="button" class="btn btn-primary btn-circle">3</a>
+            <p class="step">Step 3</p>
+        </div>
+        
+        <div class="stepwizard-step">
+            <a href="" type="button" class="btn btn-default btn-circle disabled bg-light ">4</a>
+            <p class="step">Step 4</p>
+        </div>
+        
+        <div class="stepwizard-step">
+            <a href="" type="button" class="btn btn-default btn-circle disabled bg-light">5</a>
+            <p class="step">Step 5</p>
+        </div>
+        
+    </div>
+</div>
+    <div class="aadharPan-form">
+        <div class="row" id="step-3">
+            <div class="col-md-12"> 
+                <div class="input-box">
+                    <span class="details" id="phonetext">
+                     Enter 12-digit Aadhar Card Number (without spaces)
+                    </span>
+                    <input placeholder="" maxlength="12" class="form-control" placeholder="12 digit aadhar no"  required aria-required="true" name="aadhar_no">
+                </div>
+                <div class="input-box">
+                    <span class="details" id="phonetext">
+                     Enter PAN Card No.
+                    </span>
+                    <input placeholder="" maxlength="10" class="form-control" placeholder="10 digit PAN No." required aria-required="true" name="pan_no">
+                </div>
+                <div class="button">
+                <input type="submit" value="Next step">
+                </div>
+
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock content %}
