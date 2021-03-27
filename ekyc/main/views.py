@@ -11,11 +11,10 @@ def register(request):
     if request.method == 'POST':
         fname = request.POST['fname']
         lname = request.POST['lname']
+        username = request.POST['username']
         email = request.POST['email']
         password1 = request.POST['password1']
         password2 = request.POST['password2']
-
-        username = fname + " " + lname
 
         if password1 == password2:
             if userModel.User.objects.filter(username=username).exists():
