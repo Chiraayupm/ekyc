@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import models as userModel
+from django.views.decorators.csrf import csrf_exempt
 from .models import *
 
 def index(request):
@@ -135,3 +136,17 @@ def verify_docs(request):
 
 def profile(request):
     return render(request, 'profile.html')
+
+# def video(request):
+    # return render(request, 'video.html')
+
+@csrf_exempt
+def video(request):
+    if request.method == "POST":
+        print(request.FILES.get('video'))
+        vid = VideoUpload(file=request.FILES.get('video'), user=request.user)
+        vid.save()
+        return redirect('/')
+    else:
+        return render(request, 'video.html')
+

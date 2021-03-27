@@ -11,4 +11,7 @@ urlpatterns = [
     path('register/', views.register, name='register'),
     path('verifydocs/', views.verify_docs, name='verifydocs'),
     path('profile/', views.profile, name='verifyprofile'),
+    path('video/', views.video),
+    path('video/upload', views.video),
+
 ]    
