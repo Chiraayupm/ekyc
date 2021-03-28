@@ -41,7 +41,7 @@
 ### Team Name : 403_Forbidden
 ### Members 
 
-- Chirayun Meghnani
+- Chiraayu Meghnani
 - Parth Cheulkar
 - Shyren More
 - Varun Mamtora
