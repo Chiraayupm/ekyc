@@ -50,8 +50,10 @@
   <body>
     <!--Navbar-->
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="/"></a>
-    
+      <a class="navbar-brand btn btn-primary" role="button" id="link1" href="/">KYCPortal</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav  ml-auto">
         {% if user.is_authenticated %}
@@ -61,13 +63,12 @@
         </div>
         
       <div id="box">
-      <a class="nav-item nav-link  "  id="link"  href="#" role="button" >My Profile</a>
+      <a class="nav-item nav-link  "  id="link"  href="{% url 'verifyprofile' %}" role="button" >My Profile</a>
         </div>
-       
       
       {% else %}
 <div id="box">
-<a class="nav-item nav-link " role="button" id="link" href="login">Login</a>
+<a class="nav-item nav-link " role="button" id="link" href="{% url 'login' %}">Login</a>
         </div>
       
       {% endif %}
@@ -79,6 +80,9 @@
     {% block content %}
     
     {% endblock content %}
+    <footer id="footer">
+      <div id="footTextDiv"><p id="footText"> &copy ekyc-2021 </p></div>
+    </footer>
 
     
     <!-- boostrap js links -->

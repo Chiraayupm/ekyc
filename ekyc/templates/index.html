@@ -6,38 +6,89 @@
  {% block title %} EKYC {% endblock title %}
     <!-- <title>Index</title> -->
     {% block content %}
-        	<div class="row">
-        		<div class="col col-lg-4 col-sm-12" id="imgBox">
-       			 	<img src="{% static 'images/kyc.png' %}" alt="kyc" id="kyc">
-        		</div>
-        		<div class="col col-lg-8 col-sm-12" id="contBox">
-        			<div class="col-xs-12">
-        				<h1>Get your KYC instantly verified now </h1>
+        <div class="container-fluid">
+							<div class="row">
+        					<div class="col col-md-4 col-xs-12" id="imgBox" style="padding-left:30px;">
+       			 					<img src="{% static 'images/kyc.png' %}" alt="kyc" id="kyc">
+        					</div>
+        					<div class="col col-md-8 col-xs-12 px-5" id="contBox">
+        							<div class="col-xs-12" id="mainHeading">
+        									<h3><span id="why">Get</span> your KYC instantly verified now </h3>
+        							</div>
+        							<div class="col-xs-12" id="para">
+        									<p><span id="pts">T</span>he main objective of KYC regulations is to restrict money laundering in the financial market. With the increase in suspicious activities and unlawful behaviour, the Reserve Bank of India has made it mandatory for all financial institutions to follow the Know Your Customer procedure for all customers.</p>
+        							</div>
+        					<div class="col-xs-12" id="buttonBox">
+        				<a href="profile" class="btn-primary" id="procKyc">Proceed towards KYC Verification</a> 
         			</div>
-        			<div class="col-xs-12">
-        				<p>Lorem ipsum dolor, sit amet consectetur, adipisicing elit. Porro, optio ad officia nostrum. Ut, magnam, nisi! Officia numquam voluptatem minus nam ea quasi hic neque, sunt iste, aperiam, quia? Eligendi.</p>
+        					</div>
         			</div>
-        			<div class="col-xs-12" id="buttonBox">
-        				<a href="profile" class="btn-primary" id="procKyc">Procees towards KYC Verification</a> 
-        			</div>
+        		
+        			
         		</div>
         </div>
 				<div class="row">
-					<div class="col col-lg-8 col-sm-12" id="contBox1">
-						<div class="col-xs-12">
-							<h1>Why is KYC verification necessary?</h1>
+					<div class="col col-md-12 col-xs-12" id="contBox1">
+						<div class="col-xs-12" id="heading">
+							<h3 id="kycHeading" ><span id="why">Why</span> is KYC verification necessary?</h3>
 						</div>
-						<div class="col-xs-2 col-lg-2" id="svg">
-							<svg width="5vh" height="5vh" viewBox="0 0 448 448" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M400 448H48C21.49 448 0 426.51 0 400V48C0 21.49 21.49 0 48 0H400C426.51 0 448 21.49 448 48V400C448 426.51 426.51 448 400 448ZM195.314 349.941L379.314 165.941C385.562 159.693 385.562 149.562 379.314 143.314L356.687 120.687C350.439 114.439 340.308 114.438 334.059 120.687L184 270.745L113.941 200.686C107.693 194.438 97.562 194.438 91.313 200.686L68.686 223.313C62.438 229.561 62.438 239.692 68.686 245.94L172.686 349.94C178.935 356.19 189.065 356.19 195.314 349.941V349.941Z" fill="#02AF14"/>
-</svg>
+						<div class="col-xs-12 col-lg-12 order-left" id="svgText">
+							<svg id="svg" width="10vh" height="5vh" viewBox="0 0 448 448" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M400 448H48C21.49 448 0 426.51 0 400V48C0 21.49 21.49 0 48 0H400C426.51 0 448 21.49 448 48V400C448 426.51 426.51 448 400 448ZM195.314 349.941L379.314 165.941C385.562 159.693 385.562 149.562 379.314 143.314L356.687 120.687C350.439 114.439 340.308 114.438 334.059 120.687L184 270.745L113.941 200.686C107.693 194.438 97.562 194.438 91.313 200.686L68.686 223.313C62.438 229.561 62.438 239.692 68.686 245.94L172.686 349.94C178.935 356.19 189.065 356.19 195.314 349.941V349.941Z" fill="#02AF14"/>
+							</svg>
+							<p id="text"> <span id="pts">K</span>YC is an antimoney laundering process. This helps in curbing the suspicious activities and illegal practices in the financial market. Through this process, the Government of India runs a customer identification program. This helps in knowing the customer better for future transactions</p>
 					</div>
-					<div class="col-xs-10 col-lg-10" id="inst">
-							<p> lorem ipsum is good</p>
+						<div class="col-xs-12 col-lg-12 order-left" id="svgText">
+							<svg id="svg" width="10vh" height="5vh" viewBox="0 0 448 448" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M400 448H48C21.49 448 0 426.51 0 400V48C0 21.49 21.49 0 48 0H400C426.51 0 448 21.49 448 48V400C448 426.51 426.51 448 400 448ZM195.314 349.941L379.314 165.941C385.562 159.693 385.562 149.562 379.314 143.314L356.687 120.687C350.439 114.439 340.308 114.438 334.059 120.687L184 270.745L113.941 200.686C107.693 194.438 97.562 194.438 91.313 200.686L68.686 223.313C62.438 229.561 62.438 239.692 68.686 245.94L172.686 349.94C178.935 356.19 189.065 356.19 195.314 349.941V349.941Z" fill="#02AF14"/>
+							</svg>
+							<p id="text"> <span id="pts">W</span>ith growing fraudulence in the financial market, it has become very necessary to know the customer you are doing business with. Hence, KYC policies were launched. The RBI has made KYC regulations mandatory to curb any illegalities prevalent in the financial market.</p>
 					</div>
-					<div class="col col-lg-4 col-sm-12" id="imgBox">
-						<img src="{% static 'images/kyc-onboarding.png' %}"></img>
+						<div class="col-xs-12 col-lg-12 order-left" id="svgText">
+							<svg id="svg" width="5.5vh" height="5vh" viewBox="0 0 448 448" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M400 448H48C21.49 448 0 426.51 0 400V48C0 21.49 21.49 0 48 0H400C426.51 0 448 21.49 448 48V400C448 426.51 426.51 448 400 448ZM195.314 349.941L379.314 165.941C385.562 159.693 385.562 149.562 379.314 143.314L356.687 120.687C350.439 114.439 340.308 114.438 334.059 120.687L184 270.745L113.941 200.686C107.693 194.438 97.562 194.438 91.313 200.686L68.686 223.313C62.438 229.561 62.438 239.692 68.686 245.94L172.686 349.94C178.935 356.19 189.065 356.19 195.314 349.941V349.941Z" fill="#02AF14"/>
+							</svg>
+							<p id="text"><span id="pts"> K</span>YC regulations further help in safeguarding online business and companies around the globe and also act as a firewall to prevent potential frauds. </p>
+					</div>
+						<div class="col-xs-12 col-lg-12 order-left" id="svgText">
+							<svg id="svg" width="12vh" height="5vh" viewBox="0 0 448 448" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M400 448H48C21.49 448 0 426.51 0 400V48C0 21.49 21.49 0 48 0H400C426.51 0 448 21.49 448 48V400C448 426.51 426.51 448 400 448ZM195.314 349.941L379.314 165.941C385.562 159.693 385.562 149.562 379.314 143.314L356.687 120.687C350.439 114.439 340.308 114.438 334.059 120.687L184 270.745L113.941 200.686C107.693 194.438 97.562 194.438 91.313 200.686L68.686 223.313C62.438 229.561 62.438 239.692 68.686 245.94L172.686 349.94C178.935 356.19 189.065 356.19 195.314 349.941V349.941Z" fill="#02AF14"/>
+							</svg>
+							<p id="text"> <span id="pts">I</span>t helps in knowing the customers better and ensures that they are not doing business with scammers. Thus, the Know Your Customer regulations help in making sure that the customers are genuinely who they claim to be. Any financial institution may refuse to open an account or put the same on halt if the customers fail to meet the minimum KYC requirement</p>
+					</div>
+						<div class="col-xs-12 col-lg-12 order-left" id="svgText">
+							<svg id="svg" width="7.5vh" height="5vh" viewBox="0 0 448 448" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M400 448H48C21.49 448 0 426.51 0 400V48C0 21.49 21.49 0 48 0H400C426.51 0 448 21.49 448 48V400C448 426.51 426.51 448 400 448ZM195.314 349.941L379.314 165.941C385.562 159.693 385.562 149.562 379.314 143.314L356.687 120.687C350.439 114.439 340.308 114.438 334.059 120.687L184 270.745L113.941 200.686C107.693 194.438 97.562 194.438 91.313 200.686L68.686 223.313C62.438 229.561 62.438 239.692 68.686 245.94L172.686 349.94C178.935 356.19 189.065 356.19 195.314 349.941V349.941Z" fill="#02AF14"/>
+							</svg>
+							<p id="text"> <span id="pts"> K</span>YC is mandatory even for the existing customers. The financial institutions also have to periodically update the KYC or Know Your Customer records. This further helps in preventing frauds in customer accounts. </p>
 					</div>
 				</div>
+				<div class="container-fluid">
+				
+					<div class="row">
+							<div class="col col-md-9 col-xs-12 " id="contBox" style="padding-left:2%;">
+								<div class="col-xs-12" id="mainHeading">
+												<h3><span id="why">What</span> documents are needed for online KYC Verification? </h3>
+								</div>
+								<div class="col-xs-12" id="para">
+												<p><i class="fas fa-file-image" id="pts" ></i> One passport size photo (*in JPEG format).</p>
+								</div>
+										<div class="col-xs-12" id="para">
+												<p><i class="fas fa-file-image" id="pts" ></i>Proof of Identity such as Passport, PAN Card, Aadhar, Voter ID, Driving License, etc.(*in JPEG format).</p>
+								</div>
+										<div class="col-xs-12" id="para">
+												<p><i class="fas fa-file-image" id="pts" ></i> Proof of Address such as Electricity Bill, Telephone Bill, Gas Bill,etc.(*in JPEG format).</p>
+								</div>
+					</div>
+							<div class="col col-md-3 col-xs-12 " id="immiBox">
+								<img src="{% static 'images/immigration.png' %}" alt="kyc" id="immi">
+							</div>
+				</div>
+        </div>
+        		
+        			
+        		
+				
+				</div>	
     {% endblock content %}
 
