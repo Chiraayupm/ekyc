@@ -122,17 +122,17 @@ i{
 	margin-bottom: 30px;
 }
 #immiBox{
+	width: fit-content;
 	display: inline;
 	justify-content: center;
 }
 #immi{
 	position: relative;
 	float: right;
-	width: 60vh;
+	width: 50vh;
 	display: inline;
 	margin-top: auto;
-	margin-top: -65vh;
-	margin-right: -280px;
+
 }
 @media (max-width:640px){
 	#immi{

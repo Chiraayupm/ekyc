@@ -6,12 +6,12 @@
  {% block title %} EKYC {% endblock title %}
     <!-- <title>Index</title> -->
     {% block content %}
-        <div class="container">
+        <div class="container-fluid">
 							<div class="row">
-        					<div class="col col-md-4 col-xs-12" id="imgBox">
+        					<div class="col col-md-4 col-xs-12" id="imgBox" style="padding-left:30px;">
        			 					<img src="{% static 'images/kyc.png' %}" alt="kyc" id="kyc">
         					</div>
-        					<div class="col col-md-8 col-xs-12" id="contBox">
+        					<div class="col col-md-8 col-xs-12 px-5" id="contBox">
         							<div class="col-xs-12" id="mainHeading">
         									<h3><span id="why">Get</span> your KYC instantly verified now </h3>
         							</div>
@@ -63,24 +63,27 @@
 							<p id="text"> <span id="pts"> K</span>YC is mandatory even for the existing customers. The financial institutions also have to periodically update the KYC or Know Your Customer records. This further helps in preventing frauds in customer accounts. </p>
 					</div>
 				</div>
-				<div container="row">
-						<div class="col col-md-9 col-xs-12 " id="contBox">
-        					<div class="col-xs-12" id="mainHeading">
-        									<h3><span id="why">What</span> documents are needed for online KYC Verification? </h3>
-        					</div>
-        					<div class="col-xs-12" id="para">
-        									<p><i class="fas fa-file-image" id="pts" ></i> One passport size photo (*in JPEG format).</p>
-        					</div>
-									<div class="col-xs-12" id="para">
-        									<p><i class="fas fa-file-image" id="pts" ></i>Proof of Identity such as Passport, PAN Card, Aadhar, Voter ID, Driving License, etc.(*in JPEG format).</p>
-        					</div>
-									<div class="col-xs-12" id="para">
-        									<p><i class="fas fa-file-image" id="pts" ></i> Proof of Address such as Electricity Bill, Telephone Bill, Gas Bill,etc.(*in JPEG format).</p>
-        					</div>
-        		</div>
-						<div class="col col-md-3 col-xs-12 " id="immiBox">
-       			 			<img src="{% static 'images/immigration.png' %}" alt="kyc" id="immi">
-        		</div>
+				<div class="container-fluid">
+				
+					<div class="row">
+							<div class="col col-md-9 col-xs-12 " id="contBox" style="padding-left:2%;">
+								<div class="col-xs-12" id="mainHeading">
+												<h3><span id="why">What</span> documents are needed for online KYC Verification? </h3>
+								</div>
+								<div class="col-xs-12" id="para">
+												<p><i class="fas fa-file-image" id="pts" ></i> One passport size photo (*in JPEG format).</p>
+								</div>
+										<div class="col-xs-12" id="para">
+												<p><i class="fas fa-file-image" id="pts" ></i>Proof of Identity such as Passport, PAN Card, Aadhar, Voter ID, Driving License, etc.(*in JPEG format).</p>
+								</div>
+										<div class="col-xs-12" id="para">
+												<p><i class="fas fa-file-image" id="pts" ></i> Proof of Address such as Electricity Bill, Telephone Bill, Gas Bill,etc.(*in JPEG format).</p>
+								</div>
+					</div>
+							<div class="col col-md-3 col-xs-12 " id="immiBox">
+								<img src="{% static 'images/immigration.png' %}" alt="kyc" id="immi">
+							</div>
+				</div>
         </div>
         		
         			
