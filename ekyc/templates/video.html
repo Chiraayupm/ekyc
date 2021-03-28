@@ -41,7 +41,7 @@
     </div>
 </div>
 
-  <h3 class="text-center" id="prompt_text">Time to record your video </h3>
+  <h3 class="text-center" id="prompt_text">Time to record a 10 second video </h3>
 
   <div class="left">
     <div id="startButton" class="offset-md-3 button btn btn-success col-md-6 justify-content-center align-items-center">Click to start video</div>
@@ -50,7 +50,7 @@
       <div class="row">
         <div class="mx-auto">
           <h2 id="warn_text" class="mx-auto">Hold still while we are recording your video</h2>
-           <video id="preview" width="900" height="480" class="mr-3 pr-3" autoplay muted></video>
+          <video id="preview" width="900" height="480" class="mr-3 pr-3" autoplay muted></video>
           </div>
       </div>
       </div>
@@ -148,7 +148,7 @@
           record_text.style.display="block";
           downloadButton.style.display="block"
           prompt_text.style.display="none";
-         
+        
           downloadButton.href = recording.src;
           downloadButton.download = "RecordedVideo.mp4";
           preview.style.display="none";

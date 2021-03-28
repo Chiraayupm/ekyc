@@ -185,9 +185,9 @@ content: "";
     position: relative;
 }
 
-.drop-zone__thumb::after{
+/* .drop-zone__thumb::after{
 
-    /* display text of attribute data-label */
+
     content: attr(data-label);
     position: fixed;
     scroll-behavior: initial;
@@ -200,7 +200,7 @@ content: "";
     font-size: 14px;
     text-align: center;
 
-}
+} */
 
 .step{
     color: white !important;

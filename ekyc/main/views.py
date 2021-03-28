@@ -4,6 +4,8 @@ from django.contrib.auth import models as userModel
 from django.views.decorators.csrf import csrf_exempt
 from .models import *
 
+from decouple import config
+
 def index(request):
     return render(request, 'index.html')
 
@@ -100,8 +102,8 @@ def verify_phone(request):
             print("Generated OTP is - ",otp)
             # Your Account Sid and Auth Token from twilio.com/console
             # DANGER! This is insecure. See http://twil.io/secure
-            account_sid = 'AC703679e4bfdc618b2c00d92b79be454c'
-            auth_token = '49fb345bb91b32322a28a510da05aa6e'
+            account_sid = config('account_sid')
+            auth_token = config('auth_token')
             client = Client(account_sid, auth_token)
 
             message = client.api.account.messages.create(
@@ -342,7 +344,10 @@ def video(request):
         fh = open("media/videos/video.mp4", "wb")
         fh.write(base64.b64decode(text))
         fh.close()
-        flag = verification()
+        try:
+            flag = verification()
+        except:
+            print()
         if flag == 0:
             print("Verified")
             prof = Profile.objects.get(user_id=request.user.id)
