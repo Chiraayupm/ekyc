@@ -344,6 +344,7 @@ def video(request):
         fh = open("media/videos/video.mp4", "wb")
         fh.write(base64.b64decode(text))
         fh.close()
+        flag = 1
         try:
             flag = verification()
         except:
