@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="https://github.com/varunmamtora06/ekyc/blob/master/assets/DisplayImage.PNG" width="480px" height="480px" alt="ekyc" title="EKYC"/>
+  <img src="https://github.com/varunmamtora06/ekyc/blob/master/assets/DisplayImage.PNG" width="720px" height="360px" alt="ekyc" title="EKYC"/>
 </p>
 
 
