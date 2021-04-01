@@ -1,4 +1,8 @@
-# _E-KYC  Verification_
+
+<p align="center">
+  <img src="https://github.com/" width="580px" alt="ekyc" title="EKYC"/>
+</p>
+
 
 ### Problem Statement (PS) 
 
@@ -42,6 +46,23 @@
 ### Members 
 
 - Chiraayu Meghnani
+
+<a href="mailto:chiraayupm@gmail.com"><img alt="Gmail" title="Gmail" src="https://img.shields.io/badge/-Gmail-red?style=for-the-badge&logo=gmail&logoColor=white"/></a>
+<a href="http://www.linkedin.com/in/chiraayu-pravin"><img alt="LinkedIn" title="LinkedIn" src="https://img.shields.io/badge/-LinkedIn-2867B2?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
+
 - Parth Cheulkar
+
+<a href="https://twitter.com/Parth_Vader__"><img alt="Twitter" title="Twitter" src="https://img.shields.io/badge/-Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white"/></a>
+<a href="mailto:pscheulkar12@gmail.com"><img alt="Gmail" title="Gmail" src="https://img.shields.io/badge/-Gmail-red?style=for-the-badge&logo=gmail&logoColor=white"/></a>
+<a href="http://linkedin.com/in/parthcheulkar"><img alt="LinkedIn" title="LinkedIn" src="https://img.shields.io/badge/-LinkedIn-2867B2?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
+
 - Shyren More
+
+<a href="mailto:shyren.more30@gmail.com"><img alt="Gmail" title="Gmail" src="https://img.shields.io/badge/-Gmail-red?style=for-the-badge&logo=gmail&logoColor=white"/></a>
+<a href="https://www.linkedin.com/in/shyrenmore/"><img alt="LinkedIn" title="LinkedIn" src="https://img.shields.io/badge/-LinkedIn-2867B2?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
+
 - Varun Mamtora
+
+<a href="https://twitter.com/MamtoraVarun"><img alt="Twitter" title="Twitter" src="https://img.shields.io/badge/-Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white"/></a>
+<a href="mailto:varunmamtora@gmail.com"><img alt="Gmail" title="Gmail" src="https://img.shields.io/badge/-Gmail-red?style=for-the-badge&logo=gmail&logoColor=white"/></a>
+<a href="https://www.linkedin.com/in/varun-mamtora-0b725b171/"><img alt="LinkedIn" title="LinkedIn" src="https://img.shields.io/badge/-LinkedIn-2867B2?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
