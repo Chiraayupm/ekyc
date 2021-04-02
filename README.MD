@@ -59,7 +59,7 @@
 - Shyren More
 
 <a href="mailto:shyren.more30@gmail.com"><img alt="Gmail" title="Gmail" src="https://img.shields.io/badge/-Gmail-red?style=for-the-badge&logo=gmail&logoColor=white"/></a>
-<a href="https://www.linkedin.com/in/shyrenmore/"><img alt="LinkedIn" title="LinkedIn" src="https://img.shields.io/badge/-LinkedIn-2867B2?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
+<a href="https://www.linkedin.com/in/shyrenmore/"><img alt="LinkedIn" title="LinkedIn" src="https://img.shields.io/badge/-LinkedIn-2867B2?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"/></a>
 
 - Varun Mamtora
 
